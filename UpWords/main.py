@@ -26,6 +26,5 @@ class gameRules:
         self.turnTimeLimit = timeLimit
         self.maxScore = scoreLimit
 
-class gameBoard:
     
 
