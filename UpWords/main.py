@@ -25,7 +25,7 @@ class gameRules:
         self.turnTimeLimitToggle = timeLimitOnOff
         self.turnTimeLimit = timeLimit
         self.maxScore = scoreLimit
-        self.boardSize = size
+        self.boardSize = size # in number of tiles in width (and subsequently height as the board is a square)
 
     
 
