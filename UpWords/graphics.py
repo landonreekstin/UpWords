@@ -70,6 +70,9 @@ mainWindow = pyglet.window.Window(mainWindowHeight, mainWindowWidth, "UpWords", 
 settingsWindow = pyglet.window.Window(settingWindowHeight, settingWindowWidth, "Settings", resizable=False, visible=False)
 #can be set visible when needed with window.set_visible()
 
+# ----------- Textures --------------
+blankTileTexture = pyglet.image.load('./textures/blanktile.jpg')
+
 
 # ----------- Graphics --------------
 # Creating the board
@@ -95,7 +98,7 @@ def on_draw():
     for tiles in range(len(tileArray)):
         square = shapes.Rectangle(tileArray[tiles].tileCoordinateX, tileArray[tiles].tileCoordinateY, tileArray[tiles].tileHeight, tileArray[tiles].tileWidth,
         tileArray[tiles].tileColor, batch=batch)
-        square.draw()
+        batch.draw()
 
     # draw border rectangles textured with something
 
