@@ -12,10 +12,14 @@ class player:
 
 
 class tile: 
-    def __init__(self, tileX, tileY, letter, stackVal):
+    def __init__(self, tileX, tileY, height, width, color, batch, letter, stackVal):
         self.tileCoordinateX = tileX
         self.tileCoordinateY = tileY
-        self.tileLetter = letter
+        self.tileHeight = height
+        self.tileWidth = width
+        self.tileColor = color
+        self.tileBatch = batch
+        self.tileLetter = letter #will be used for texture
         self.tileStackValue = stackVal
 
 class gameRules: 
