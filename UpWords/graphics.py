@@ -1,10 +1,37 @@
 import pyglet
 import sys
-from UpWords import main
 from math import degrees
 from pyglet.window import key
-from UpWords.main import gameRules
+#import UpWords.main
+#from UpWords.main import gameRules
 from pyglet import shapes
+
+# for testing
+# set as import later
+# ------- Classes from main.py -------------
+class player:
+    def __init__(self, name, score, turn):
+        self.playerName = name
+        self.playerScore = score
+        self.playerTurnNo = turn
+        self.playerLetterInventory = []
+
+
+class tile: 
+    def __init__(self, tileX, tileY, letter, stackVal):
+        self.tileCoordinateX = tileX
+        self.tileCoordinateY = tileY
+        self.tileLetter = letter
+        self.tileStackValue = stackVal
+
+class gameRules: 
+    def __init__(self, maxHeight, maxLetters, timeLimitOnOff, timeLimit, scoreLimit, size):
+        self.maxTileHeight = maxHeight
+        self.maxLettersPerPlayer = maxLetters
+        self.turnTimeLimitToggle = timeLimitOnOff
+        self.turnTimeLimit = timeLimit
+        self.maxScore = scoreLimit
+        self.boardSize = size # in number of tiles in width (and subsequently height as the board is a square)
 
 # ------------ Global Variables ------------
 mainWindowHeight = 1024
@@ -41,7 +68,7 @@ settingsWindow = pyglet.window.Window(settingWindowHeight, settingWindowWidth, "
 
 # ----------- Graphics --------------
 # Creating the board
-@window.event
+@mainWindow.event
 def on_draw():
     # calculates appropriate blank tile size by taking total space of the board (window width - gutter space) and dividing by selected board size in tiles
     # this will allow the board tiles to scale as board size is changed
@@ -56,3 +83,12 @@ def on_draw():
     # draw border rectangles textured with something
 
     # draw space for player's current letter tiles in side or bottom bar
+
+
+def update(dt):
+    pass
+
+
+if __name__ == "__main__":
+    pyglet.clock.schedule_interval(update, 1.0/60)
+    pyglet.app.run()
