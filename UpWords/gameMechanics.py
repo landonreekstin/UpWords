@@ -1,4 +1,5 @@
 from functools import reduce
+import math
 
 
 ##################
@@ -29,9 +30,17 @@ def isValid(listOfLetters):
     return word in dictionary
 
 # calculates the score of a word once its played and returns it as an integer
-def score(word):
-    return 0
+def score(listOfLetters):
+    total = 0
+    if len(listOfLetters) == 7:
+        total += 20
+    for letter in listOfLetters:
+       total +=  letter.square.height + 2
+    return total
+    # need to add intersections of words
 
-
-
-
+# gets new
+def getNewLetter(gameLetters):
+    index = math.random() * 
+    letter = letters[index]
+    return letter
