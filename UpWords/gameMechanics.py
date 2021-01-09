@@ -29,6 +29,8 @@ def isValid(listOfLetters):
     word = word.lower()
     return word in dictionary
 
+# add regex or similar for proper noun checking
+
 # calculates the score of a word once its played and returns it as an integer
 def score(listOfLetters):
     total = 0
