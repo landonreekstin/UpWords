@@ -14,7 +14,7 @@ for line in wordsFile:
 wordsFile.close()
 
 ###############
-### Letters ###
+### Letters ### # CHANGE TO BE BASED ON PROBABILITY
 ###############
 letters = ["J", "Qu", "V", "X", "Z", "K", "W", "Y", "K", "W", "Y", "B", "F", "G", "H", "P", "B", "F", "G", "H", "P", 
 "B", "F", "G", "H", "P", "C", "C", "C", "C", "D", "L", "M", "N", "R", "T", "U", "D", "L", "M", "N", "R", "T", "U", 
@@ -43,6 +43,6 @@ def score(listOfLetters):
 
 # gets new
 def getNewLetter(gameLetters):
-    index = math.random() * 
+    #index = math.random() * 
     letter = letters[index]
     return letter
