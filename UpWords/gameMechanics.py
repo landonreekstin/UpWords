@@ -1,5 +1,6 @@
 from functools import reduce
 import math
+import random
 
 
 ##################
@@ -14,14 +15,10 @@ for line in wordsFile:
 wordsFile.close()
 
 ###############
-### Letters ### # CHANGE TO BE BASED ON PROBABILITY
+### Letters ###
 ###############
-letters = ["J", "Qu", "V", "X", "Z", "K", "W", "Y", "K", "W", "Y", "B", "F", "G", "H", "P", "B", "F", "G", "H", "P", 
-"B", "F", "G", "H", "P", "C", "C", "C", "C", "D", "L", "M", "N", "R", "T", "U", "D", "L", "M", "N", "R", "T", "U", 
-"D", "L", "M", "N", "R", "T", "U", "D", "L", "M", "N", "R", "T", "U", "D", "L", "M", "N", "R", "T", "U", "S", "S", 
-"S", "S", "S", "S", "A", "I", "O", "A", "I", "O", "A", "I", "O", "A", "I", "O", "A", "I", "O", "A", "I", "O", "A", 
-"I", "O", "E", "E", "E", "E", "E", "E", "E", "E"]
-
+letters = {"A": 7, "B": 3, "C": 4, "D": 5, "E": 8, "F": 3, "G": 3, "H": 3, "I": 7, "J": 1, "K": 2, "L": 5, "M": 5, 
+"N": 5, "O": 7, "P": 3, "Qu": 1, "R": 5, "S": 6, "T": 5, "U": 5, "V": 1, "W": 2, "X": 1, "Y": 2, "Z": 1}
 
 # returns true if the word played is valid and false otherwise
 def isValid(listOfLetters):
@@ -42,7 +39,15 @@ def score(listOfLetters):
     # need to add intersections of words
 
 # gets new
-def getNewLetter(gameLetters):
-    #index = math.random() * 
-    letter = letters[index]
-    return letter
+def getNewLetter(dic):
+    index = weightedPick(dic)
+    
+
+def weightedPick(dic):
+    r = random.uniform(0, sum(dic.itervalues()))
+    s = 0.0
+    for k, w in dic.iteritems():
+        s += w
+        if r < s: return k
+    return k
+
